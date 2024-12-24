@@ -1,27 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <router-view></router-view>
+  <!-- <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  </div> -->
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { useStore } from "vuex";
 
-export default defineComponent({
+export default {
   name: "App",
-  components: {
-    HelloWorld,
+
+  setup() {
+    const store = useStore();
+
+    return { store };
   },
-});
+};
+// import { defineComponent } from "vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+
+// export default defineComponent({
+//   name: "App",
+//   components: {
+//     HelloWorld,
+//   },
+// });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css">
+@import "./styles/reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  background-color: #f7eee4;
+  color: #333;
+  font-size: 14px;
+}
+body #app {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 25px;
+}
+.poor {
+  font-family: "Poor Story", cursive;
+}
+.roboto {
+  font-family: "Roboto", sans-serif;
 }
 </style>

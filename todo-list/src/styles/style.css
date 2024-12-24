@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+/* common */
+.topBox {
+  display: flex;
+  padding: 7px 0 7px 5px;
+  border-bottom: 2px solid #6a6966;
+  background-color: #c5c5c5;
+}
+.topBox .btn {
+  margin: 0 2px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #92776c;
+}
+.topBox .redOne {
+  background-color: #f94d3f;
+}
+.topBox .yellowOne {
+  background-color: #f7d08e;
+}
+
+/* HeaderWrap */
+.title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* InputBox */
+.inputBox {
+  background-color: #fff;
+  border: 2px solid #6a6966;
+}
+.inputBox .bodyBox {
+  padding: 15px;
+}
+.inputBox .bodyBox .inputBoxTitle {
+  display: flex;
+  margin-bottom: 20px;
+}
+.inputBox .bodyBox .inputBoxTitle .inputTitle {
+  border-bottom: 1px solid #6a6966;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 20px;
+  padding-bottom: 3px;
+}
+.inputBox .bodyBox .inputBoxContent {
+  display: flex;
+}
+.inputBox .bodyBox .inputBoxContent .inputTextArea {
+  resize: none;
+  background-color: #eee;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+.inputBox .btnBox {
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}
+.inputBox .btnBox button {
+  border: 1px solid #6a6966;
+  height: 30px;
+  width: 30px;
+  background: #eee;
+}
+.inputBox .btnBox button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.inputBox .bodyBox .inputBoxTitle .mainTitle,
+.inputBox .bodyBox .inputBoxContent .miniTitle {
+  font-size: 20px;
+  width: 95px;
+  letter-spacing: 1px;
+}
+.inputBox .bodyBox .inputBoxTitle .inputTitle:focus,
+.inputBox .bodyBox .inputBoxContent .inputTextArea:focus {
+  outline: none;
+}
+
+/* WorkBox */
+.workBox {
+  margin-top: 25px;
+}
+.workBox .mainTitle {
+  font-size: 25px;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+}
+.workBox .listWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  min-height: 253px;
+}
+.workBox .listWrap .list {
+  width: calc(96% / 4);
+  border: 2px solid #6a6966;
+  background-color: #fff;
+}
+.workBox .listWrap .list .topBox {
+  display: flex;
+  padding: 7px 0 7px 5px;
+  border-bottom: 2px solid #6a6966;
+  background-color: #c5c5c5;
+}
+.workBox .listWrap .list .listContent {
+  padding: 15px;
+}
+.workBox .listWrap .list .listContent .conTitle {
+  min-height: 20px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.workBox .listWrap .list .listContent .conContent {
+  height: 100px;
+  max-height: 100px;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 7px 9px;
+  overflow: auto;
+}
+.workBox .listWrap .list .btnBox {
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}
+.workBox .listWrap .list .btnBox button {
+  border: 1px solid #6a6966;
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+  background: #eee;
+}
+.workBox .listWrap .list .btnBox button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.workBox .listWrap .list .btnBox button:last-child {
+  margin-right: 0;
+}
+
+/* DetailBox */
+.detailBox {
+  background-color: #fff;
+  border: 2px solid #6a6966;
+}
+.detailBox .topBox {
+  display: flex;
+  align-items: center;
+  padding: 7px 5px;
+  border-bottom: 2px solid #6a6966;
+  background-color: #c5c5c5;
+}
+.detailBox .topBox .todoIdInfo {
+  margin-left: auto;
+  color: #555;
+}
+.detailBox .listContent {
+  padding: 20px;
+  background-color: #fff;
+}
+.detailBox .listContent .conWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.detailBox .listContent .conStatus {
+  font-size: 13px;
+  border-radius: 30px;
+  padding: 7px 13px;
+  margin-right: 10px;
+  color: #555;
+}
+.detailBox .listContent .conStatus.statusW {
+  background-color: #ffe26e;
+}
+.detailBox .listContent .conStatus.statusD {
+  background-color: #129f74;
+  color: #fff;
+}
+.detailBox .listContent .conTitle {
+  font-size: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.detailBox .listContent .conContent {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow: hidden;
+  font-size: 18px;
+  min-height: 100px;
+}
+.detailBox .btnBox {
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}
+.detailBox .btnBox button {
+  border: 1px solid #6a6966;
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+  background: #eee;
+}
+.detailBox .btnBox button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
