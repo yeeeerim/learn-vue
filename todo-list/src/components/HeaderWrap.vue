@@ -4,4 +4,6 @@
 <script>
 export default {};
 </script>
-<style lang=""></style>
+<style lang="css">
+@import "../styles/style.css";
+</style>
