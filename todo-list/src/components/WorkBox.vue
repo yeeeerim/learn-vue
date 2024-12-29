@@ -56,10 +56,6 @@ export default {
   name: "WorkBox",
 
   setup() {
-    onMounted(() => {
-      console.log(store.state.todoList);
-    });
-
     const filteredWorkingTodos = computed(() => {
       return store.state.todoList.filter((item) => !item.completed);
     });

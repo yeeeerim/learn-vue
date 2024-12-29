@@ -1,27 +1,27 @@
-<template lang="">
-  <section>
+<template>
+  <section class="detailBox">
     <div class="topBox">
       <span class="btn redOne"></span>
       <span class="btn yellowOne"></span>
-      <span class="todoIdInfo">{{ todo?.id }}</span>
+      <span class="todoIdInfo">{{ todo.id }}</span>
     </div>
-    <div>
-      <div class="listContent">
-        <div class="conWrap">
-          <p class="conStatus statusW" v-if="todo?.completed === false">
-            Working
-          </p>
-          <p class="conStatus statusD" v-if="todo?.completed === true">Done</p>
-          <p class="conTitle poor">{{ todo?.title }}</p>
-        </div>
-        <div class="btnBox"><button @click="$router.push('/')">🏠</button></div>
+    <div class="listContent">
+      <div class="conWrap">
+        <p class="conStatus statusW" v-if="todo.isDone == false">Working</p>
+        <p class="conStatus statusD" v-if="todo.isDone == true">Done</p>
+        <p class="conTitle poor">{{ todo.title }}</p>
       </div>
+      <p class="conContent poor">{{ todo.body }}</p>
+    </div>
+    <div class="btnBox">
+      <Button @click="$router.push(`/`)">🏠</Button>
     </div>
   </section>
 </template>
+
 <script>
 import store from "@/store/store";
-import { onMounted, ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 export default {
@@ -32,12 +32,19 @@ export default {
     const route = useRoute();
 
     onMounted(() => {
-      const todoId = route.params?.id;
-      todo.value = store.state.todos?.find((todo) => todo.id === todoId);
+      console.log("??");
+      const todoId = route.params.id;
+
+      todo.value = store.state.todoList.find((item) => item.id === todoId);
     });
 
-    return { todo };
+    return {
+      todo,
+    };
   },
 };
 </script>
-<style lang=""></style>
+
+<style lang="css">
+@import "../styles/style.css";
+</style>

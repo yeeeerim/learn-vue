@@ -1,7 +1,20 @@
-<template lang="">
-  <div></div>
+<template>
+  <div>
+    <HeaderWrap />
+    <DetailBox />
+  </div>
 </template>
+
 <script>
-export default {};
+import HeaderWrap from "@/components/HeaderWrap";
+import DetailBox from "@/components/DetailBox";
+
+export default {
+  name: "DetailPage",
+
+  components: {
+    HeaderWrap,
+    DetailBox,
+  },
+};
 </script>
-<style lang=""></style>
