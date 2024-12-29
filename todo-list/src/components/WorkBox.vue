@@ -49,40 +49,28 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import store from "@/store/store";
-import { onMounted, computed } from "vue";
-export default {
-  name: "WorkBox",
+import { computed } from "vue";
 
-  setup() {
-    const filteredWorkingTodos = computed(() => {
-      return store.state.todoList.filter((item) => !item.completed);
-    });
+const filteredWorkingTodos = computed(() => {
+  return store.state.todoList.filter((item) => !item.completed);
+});
 
-    const filteredDoneTodos = computed(() => {
-      return store.state.todoList.filter((item) => item.completed);
-    });
+const filteredDoneTodos = computed(() => {
+  return store.state.todoList.filter((item) => item.completed);
+});
 
-    const removeTodoHandler = (todo) => {
-      if (confirm("정말 삭제하시겠습니까?")) {
-        store.commit("deleteTodo", todo.id);
-      } else return false;
-    };
+const removeTodoHandler = (todo) => {
+  if (confirm("정말 삭제하시겠습니까?")) {
+    store.commit("deleteTodo", todo.id);
+  } else return false;
+};
 
-    const statusHandler = (todo) => {
-      if (confirm("상태를 변경하시겠습니까?")) {
-        store.commit("updateTodo", todo.id);
-      } else return false;
-    };
-
-    return {
-      removeTodoHandler,
-      filteredWorkingTodos,
-      filteredDoneTodos,
-      statusHandler,
-    };
-  },
+const statusHandler = (todo) => {
+  if (confirm("상태를 변경하시겠습니까?")) {
+    store.commit("updateTodo", todo.id);
+  } else return false;
 };
 </script>
 <style lang="css">

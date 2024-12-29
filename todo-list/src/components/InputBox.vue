@@ -22,36 +22,30 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import store from "@/store/store";
 
-export default {
-  setup() {
-    const title = ref("");
-    const body = ref("");
+const title = ref("");
+const body = ref("");
 
-    const onSubmitHandler = () => {
-      if (!title.value) {
-        alert("Please enter a title");
-        return;
-      } else {
-        const newTodo = {
-          id: Math.random().toString(36).substring(2, 16),
-          title: title.value,
-          body: body.value,
-          completed: false,
-        };
-
-        store.commit("addTodo", newTodo);
-
-        title.value = "";
-        body.value = "";
-      }
+const onSubmitHandler = () => {
+  if (!title.value) {
+    alert("Please enter a title");
+    return;
+  } else {
+    const newTodo = {
+      id: Math.random().toString(36).substring(2, 16),
+      title: title.value,
+      body: body.value,
+      completed: false,
     };
 
-    return { title, body, onSubmitHandler };
-  },
+    store.commit("addTodo", newTodo);
+
+    title.value = "";
+    body.value = "";
+  }
 };
 </script>
 

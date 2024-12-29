@@ -19,30 +19,18 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import store from "@/store/store";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
-export default {
-  name: "DetailBox",
+const todo = ref({});
+const route = useRoute();
 
-  setup() {
-    const todo = ref({});
-    const route = useRoute();
-
-    onMounted(() => {
-      console.log("??");
-      const todoId = route.params.id;
-
-      todo.value = store.state.todoList.find((item) => item.id === todoId);
-    });
-
-    return {
-      todo,
-    };
-  },
-};
+onMounted(() => {
+  const todoId = route.params.id;
+  todo.value = store.state.todoList.find((item) => item.id === todoId);
+});
 </script>
 
 <style lang="css">
