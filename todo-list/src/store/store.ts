@@ -31,9 +31,12 @@ const store = createStore({
     deleteTodo: (state, id) => {
       state.todoList = state.todoList.filter((todo) => todo.id !== id);
     },
-    updateTodo: (state, todo) => {
-      const index = state.todoList.findIndex((t) => t.id === todo.id);
-      state.todoList[index] = todo;
+    updateTodo: (state, id) => {
+      const index = state.todoList.findIndex((t) => t.id === id);
+      state.todoList[index] = {
+        ...state.todoList[index],
+        completed: !state.todoList[index].completed,
+      };
     },
   },
   actions: {},

@@ -8,8 +8,10 @@
     <div>
       <div class="listContent">
         <div class="conWrap">
-          <p class="conStatus statusW" v-if="todo?.isDone === false">Working</p>
-          <p class="conStatus statusD" v-if="todo?.isDone === true">Done</p>
+          <p class="conStatus statusW" v-if="todo?.completed === false">
+            Working
+          </p>
+          <p class="conStatus statusD" v-if="todo?.completed === true">Done</p>
           <p class="conTitle poor">{{ todo?.title }}</p>
         </div>
         <div class="btnBox"><button @click="$router.push('/')">🏠</button></div>
@@ -18,7 +20,7 @@
   </section>
 </template>
 <script>
-import store from "@/store/index";
+import store from "@/store/store";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 

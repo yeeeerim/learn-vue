@@ -9,7 +9,11 @@
       </div>
       <div class="inputBoxContent">
         <p class="miniTitle roboto">Content</p>
-        <textarea v-model="body" placeholder="내용"></textarea>
+        <textarea
+          class="inputTextArea poor"
+          v-model="body"
+          placeholder="내용"
+        ></textarea>
       </div>
       <div class="btnBox">
         <button @click="onSubmitHandler()">+</button>
@@ -20,7 +24,7 @@
 
 <script>
 import { ref } from "vue";
-import store from "@/store";
+import store from "@/store/store";
 
 export default {
   setup() {
